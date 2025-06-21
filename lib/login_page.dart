@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:med/signup_page.dart';
+import 'package:med/home_page.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -34,9 +35,9 @@ class LoginPage extends StatelessWidget {
                   Text(
                     'Welcome',
                     style: GoogleFonts.urbanist(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w600,
-                      color: const Color(0xFF38435E),
+                      fontSize: 28,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF1D1E25),
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -50,27 +51,41 @@ class LoginPage extends StatelessWidget {
                   const SizedBox(height: 32),
                   Container(
                     height: 56,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: const Color(0xFFE8ECF4)),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
-                      children: [
-                        const SizedBox(width: 16),
-                        Image.asset(
-                          'assets/images/google.png',
-                          width: 24,
-                          height: 24,
-                        ),
-                        const SizedBox(width: 12),
-                        Text(
-                          'Sign in with Google',
-                          style: GoogleFonts.urbanist(
-                            fontSize: 15,
-                            color: const Color(0xFF38435E),
+                    child: FilledButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
                           ),
+                        );
+                      },
+                      style: FilledButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          side: BorderSide(color: const Color(0xFFE8ECF4)),
                         ),
-                      ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.g_mobiledata_rounded,
+                            color: const Color(0xFF38435E),
+                            size: 28,
+                          ),
+                          const SizedBox(width: 12),
+                          Text(
+                            'Sign in with Google',
+                            style: GoogleFonts.urbanist(
+                              fontSize: 15,
+                              color: const Color(0xFF38435E),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -155,7 +170,8 @@ class LoginPage extends StatelessWidget {
                       'Forgot Password?',
                       style: GoogleFonts.urbanist(
                         fontSize: 14,
-                        color: const Color(0xFF38435E),
+                        fontWeight: FontWeight.w700,
+                        color: const Color(0xFF2663FF),
                       ),
                     ),
                   ),
@@ -165,12 +181,19 @@ class LoginPage extends StatelessWidget {
                     height: 56,
                     child: FilledButton(
                       style: FilledButton.styleFrom(
-                        backgroundColor: const Color(0xFF1E232C),
+                        backgroundColor: const Color(0xFF2663FF),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(16),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      },
                       child: Text(
                         'Sign In',
                         style: GoogleFonts.urbanist(
@@ -206,7 +229,7 @@ class LoginPage extends StatelessWidget {
                           style: GoogleFonts.urbanist(
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
-                            color: const Color(0xFF38435E),
+                            color: const Color(0xFF2663FF),
                           ),
                         ),
                       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:med/login_page.dart';
+import 'package:med/home_page.dart';
 
 class SignUpPage extends StatelessWidget {
   const SignUpPage({super.key});
@@ -34,9 +35,9 @@ class SignUpPage extends StatelessWidget {
                   Text(
                     'Sign Up',
                     style: GoogleFonts.urbanist(
-                      fontSize: 32,
-                      fontWeight: FontWeight.w600,
-                      color: const Color(0xFF38435E),
+                      fontSize: 28,
+                      fontWeight: FontWeight.w700,
+                      color: const Color(0xFF1D1E25),
                     ),
                   ),
                   const SizedBox(height: 8),
@@ -50,27 +51,41 @@ class SignUpPage extends StatelessWidget {
                   const SizedBox(height: 32),
                   Container(
                     height: 56,
-                    decoration: BoxDecoration(
-                      border: Border.all(color: const Color(0xFFE8ECF4)),
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
-                      children: [
-                        const SizedBox(width: 16),
-                        Image.asset(
-                          'assets/images/google.png',
-                          width: 24,
-                          height: 24,
-                        ),
-                        const SizedBox(width: 12),
-                        Text(
-                          'Sign Up with Google',
-                          style: GoogleFonts.urbanist(
-                            fontSize: 15,
-                            color: const Color(0xFF38435E),
+                    child: FilledButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
                           ),
+                        );
+                      },
+                      style: FilledButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        elevation: 0,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          side: BorderSide(color: const Color(0xFFE8ECF4)),
                         ),
-                      ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.g_mobiledata_rounded,
+                            color: const Color(0xFF38435E),
+                            size: 28,
+                          ),
+                          const SizedBox(width: 12),
+                          Text(
+                            'Sign Up with Google',
+                            style: GoogleFonts.urbanist(
+                              fontSize: 15,
+                              color: const Color(0xFF38435E),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                   const SizedBox(height: 24),
@@ -179,7 +194,9 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  Row(
+                  Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    alignment: WrapAlignment.start,
                     children: [
                       SizedBox(
                         width: 24,
@@ -215,12 +232,15 @@ class SignUpPage extends StatelessWidget {
                           color: const Color(0xFF1E232C),
                         ),
                       ),
-                      Text(
-                        'Privacy Policy',
-                        style: GoogleFonts.urbanist(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w600,
-                          color: const Color(0xFF1E232C),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 36),
+                        child: Text(
+                          'Privacy Policy',
+                          style: GoogleFonts.urbanist(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w600,
+                            color: const Color(0xFF1E232C),
+                          ),
                         ),
                       ),
                     ],
@@ -231,12 +251,19 @@ class SignUpPage extends StatelessWidget {
                     height: 56,
                     child: FilledButton(
                       style: FilledButton.styleFrom(
-                        backgroundColor: const Color(0xFF1E232C),
+                        backgroundColor: const Color(0xFF2663FF),
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(16),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const HomePage(),
+                          ),
+                        );
+                      },
                       child: Text(
                         'Sign Up',
                         style: GoogleFonts.urbanist(
@@ -272,7 +299,7 @@ class SignUpPage extends StatelessWidget {
                           style: GoogleFonts.urbanist(
                             fontSize: 15,
                             fontWeight: FontWeight.w600,
-                            color: const Color(0xFF38435E),
+                            color: const Color(0xFF2663FF),
                           ),
                         ),
                       ),

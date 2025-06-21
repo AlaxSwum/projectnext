@@ -190,7 +190,7 @@ class SecondPage extends StatelessWidget {
                               ),
                             ),
                             TextSpan(
-                              text: 'gets easier . Now on your hand',
+                              text: ' gets easier . Now on your hand',
                               style: GoogleFonts.urbanist(
                                 fontSize: 24,
                                 fontWeight: FontWeight.w400,
@@ -211,7 +211,14 @@ class SecondPage extends StatelessWidget {
                             child: SizedBox(
                               height: 52,
                               child: FilledButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const LoginPage(),
+                                    ),
+                                  );
+                                },
                                 style: FilledButton.styleFrom(
                                   padding: const EdgeInsets.symmetric(
                                     horizontal: 8,
